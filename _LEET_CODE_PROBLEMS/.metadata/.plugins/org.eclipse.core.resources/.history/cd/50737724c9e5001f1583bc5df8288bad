@@ -1,0 +1,23 @@
+package com.leetcodeproblems.array;
+
+import java.util.Arrays;
+
+public class RemoveDuplicatesFromSortedArray 
+{
+	public static int removeDuplicateFromSorted(int arr[])
+	{
+		Arrays.sort(arr);
+		int k=2;
+		
+		for(int i=2;i<arr.length;i++)
+		{
+			if(arr[i]!=arr[i-2])
+			{
+				arr[k]=arr[i];
+				k++;
+			}
+		}
+		return k;
+	}
+
+}
